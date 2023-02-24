@@ -1,3 +1,7 @@
+.siddbar {
+  flex: 0.2;
+}
+
 .sidebar__compose {
   margin-top: 15px !important;
   margin-left: 10px !important;
@@ -8,3 +12,9 @@
   border-radius: 15px !important;
   background-color: #AED6F1 !important;
 }
+
+.sidebar__footer {
+  display: flex;
+  justify-content: center;
+}
+
