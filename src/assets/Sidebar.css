@@ -1,5 +1,6 @@
 .siddbar {
   flex: 0.2;
+  width: 100%;
 }
 
 .sidebar__compose {
@@ -16,5 +17,5 @@
 .sidebar__footer {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
-

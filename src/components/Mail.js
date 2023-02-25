@@ -1,10 +1,9 @@
-import React from 'react'
 import "../assets/Mail.css";
 
+import React from "react";
+
 function Mail() {
-  return (
-    <div className='mail'>Mail</div>
-  )
+  return <div className='mail'>Mail</div>;
 }
 
-export default Mail
+export default Mail;

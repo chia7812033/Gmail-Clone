@@ -1,0 +1,22 @@
+.emailList {
+  flex: 0.8;
+}
+
+.emailList__settings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.emailList__settingsLeft {
+  display: flex;
+}
+
+.emailList__settingsRight {
+  display: flex;
+}
+
+.emailList__settingsSet {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+}

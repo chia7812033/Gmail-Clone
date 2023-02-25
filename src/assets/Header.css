@@ -1,5 +1,6 @@
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 1fr;
   padding-top: 8px;
   width: 100%;
   padding-left: 10px;
@@ -7,7 +8,6 @@
 }
 
 .header__left {
-  flex: 0.2;
   display: flex;
   align-items: center;
 }
@@ -18,14 +18,20 @@
   margin-left: 5px;
 }
 
+.header__rightSection {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  justify-content: space-between;
+}
+
 .header__middle {
-  flex: 0.6;
+  min-width: 200px;
+  max-width: 80%;
 }
 
 .header__search {
   display: flex;
   align-items: center;
-  max-width: 550px;
   background-color: #d6eaf8;
   border-radius: 8px;
   padding: 3px;

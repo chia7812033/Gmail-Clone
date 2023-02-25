@@ -1,7 +1,10 @@
 .app {
-  background-color: #EBF5FB;
+  background-color: #ebf5fb;
+  height: 100vh;
 }
 
 .app__body {
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  height: 100vh;
 }

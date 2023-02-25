@@ -1,47 +1,49 @@
-import { Button, IconButton } from "@mui/material";
-import React from "react";
 import "../assets/Sidebar.css";
-import CreateIcon from "@mui/icons-material/Create";
-import SidebarOption from "./SidebarOption";
-import InboxIcon from "@mui/icons-material/Inbox";
-import StarIcon from "@mui/icons-material/Star";
+
+import { Button, IconButton } from "@mui/material";
+
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import CreateIcon from "@mui/icons-material/Create";
+import DuoIcon from "@mui/icons-material/Duo";
+import InboxIcon from "@mui/icons-material/Inbox";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import LabelImportantIcon from "@mui/icons-material/LabelImportant";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import NoteIcon from "@mui/icons-material/Note";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PersonIcon from "@mui/icons-material/Person";
-import DuoIcon from "@mui/icons-material/Duo";
 import PhoneIcon from "@mui/icons-material/Phone";
+import React from "react";
+import SidebarOption from "./SidebarOption";
+import StarIcon from "@mui/icons-material/Star";
 
 function Sidebar() {
   return (
-    <div className="sidebar">
-      <Button startIcon={<CreateIcon />} className="sidebar__compose">
+    <div className='sidebar'>
+      <Button startIcon={<CreateIcon />} className='sidebar__compose'>
         Compose
       </Button>
 
-      <div className="sidebar__options">
+      <div className='sidebar__options'>
         <SidebarOption
           Icon={InboxIcon}
-          title="Inbox"
+          title='Inbox'
           number={45}
           selected={true}
         />
-        <SidebarOption Icon={StarIcon} title="Starred" number={45} />
-        <SidebarOption Icon={AccessTimeIcon} title="Snoozed" number={45} />
+        <SidebarOption Icon={StarIcon} title='Starred' number={45} />
+        <SidebarOption Icon={AccessTimeIcon} title='Snoozed' number={45} />
         <SidebarOption
           Icon={LabelImportantIcon}
-          title="Important"
+          title='Important'
           number={45}
         />
-        <SidebarOption Icon={NearMeIcon} title="Sent" number={45} />
-        <SidebarOption Icon={NoteIcon} title="Drafts" number={45} />
-        <SidebarOption Icon={KeyboardArrowDownIcon} title="More" />
+        <SidebarOption Icon={NearMeIcon} title='Sent' number={45} />
+        <SidebarOption Icon={NoteIcon} title='Drafts' number={45} />
+        <SidebarOption Icon={KeyboardArrowDownIcon} title='More' />
       </div>
 
-      <div className="sidebar__footer">
-        <div className="sidebar__footerIcons">
+      <div className='sidebar__footer'>
+        <div className='sidebar__footerIcons'>
           <IconButton>
             <PersonIcon />
           </IconButton>
