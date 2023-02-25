@@ -1,11 +1,9 @@
 .emailList {
-  flex: 1;
   overflow-y: auto;
   margin: 15px 10px;
   background-color: white;
   border-radius: 10px;
   padding-top: 10px;
-  max-height: 80vh;
 }
 
 .emailList__settings {

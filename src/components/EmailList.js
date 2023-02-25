@@ -16,6 +16,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import Section from "./Section";
 
 function EmailList() {
+
   const squreButtonStyle = {
     borderRadius: 1,
     size: "small",
@@ -59,16 +60,22 @@ function EmailList() {
       </div>
 
       <div className='emailList__sections'>
-        <Section Icon={InboxIcon} title='Inbox' selected={true} />
+        <Section Icon={InboxIcon} title='Primary' selected={true} />
         <Section Icon={LocalOfferIcon} title='Promotions' />
         <Section Icon={PeopleAltIcon} title='Social' />
       </div>
 
       <div className='emailList__list'>
         <EmailRow
-          title='Twitch'
+          sender='Twitch'
           subject='Hello new follwer!'
           description='This is a test'
+          time='10pm'
+        />
+        <EmailRow
+          sender='Twitch'
+          subject='Hello new follwer!'
+          description='This is a test This is a test This is a test This is a test'
           time='10pm'
         />
       </div>

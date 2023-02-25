@@ -1,6 +1,6 @@
 .app {
   background-color: #ebf5fb;
-  height: 100vh;
+  height: 90vh;
 }
 
 .app__body {
@@ -8,4 +8,5 @@
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 1fr;
+  height: 90vh;
 }

@@ -1,0 +1,112 @@
+.mail {
+  background-color: white;
+  border-radius: 10px;
+  margin: 15px 10px;
+}
+
+.mail__back {
+  margin-right: 30px !important;
+}
+
+.mail__tools {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 5px;
+}
+
+.mail__toolsLeft {
+  display: flex;
+}
+
+.mail_toolsRight {
+  display: flex;
+}
+
+.mail__settingsSet {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.mail__header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.mail__subject {
+  display: flex;
+  align-items: center;
+}
+
+.mail__subject > h3 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-left: 80px;
+  padding-bottom: 5px;
+  margin-right: 5px;
+}
+
+.mail__sender {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.mail__senderMain {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.mail__senderMain > div {
+  display: flex;
+  align-items: center;
+}
+
+.mail__senderMain > div > h4 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.mail__senderMain > div > p {
+  font-size: 6px;
+  color: gray;
+  margin-left: 10px;
+}
+
+.mail__senderTools {
+  margin-left: auto;
+}
+
+.mail__senderTo {
+  margin-top: -15px;
+}
+
+.mail__senderTo > p {
+  margin-left: 0px !important;
+}
+
+.mail__content {
+  margin: 20px;
+  font-size: 18px;
+}
+
+.mail__buttons {
+  margin: 15px;
+}
+
+.mail__button {
+  text-transform: capitalize !important;
+  color: rgb(102, 95, 95) !important;
+  border-radius: 20px !important;
+  border: 0.2px solid black !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  font-size: 12px !important;
+  margin: 5px !important;
+}
