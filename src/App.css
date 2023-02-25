@@ -4,7 +4,8 @@
 }
 
 .app__body {
+  background-color: #ebf5fb;
   display: grid;
   grid-template-columns: 200px 1fr;
-  height: 100vh;
+  grid-template-rows: 1fr;
 }

@@ -3,6 +3,7 @@ import "../assets/EmailList.css";
 import { Checkbox, IconButton } from "@mui/material";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import EmailRow from "./EmailRow";
 import InboxIcon from "@mui/icons-material/Inbox";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -58,9 +59,18 @@ function EmailList() {
       </div>
 
       <div className='emailList__sections'>
-        <Section Icon={InboxIcon} title='Inbox'selected={true} />
-        <Section Icon={LocalOfferIcon} title='Promotions'/>
-        <Section Icon={PeopleAltIcon} title='Social'/>
+        <Section Icon={InboxIcon} title='Inbox' selected={true} />
+        <Section Icon={LocalOfferIcon} title='Promotions' />
+        <Section Icon={PeopleAltIcon} title='Social' />
+      </div>
+
+      <div className='emailList__list'>
+        <EmailRow
+          title='Twitch'
+          subject='Hello new follwer!'
+          description='This is a test'
+          time='10pm'
+        />
       </div>
     </div>
   );

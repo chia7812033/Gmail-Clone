@@ -1,0 +1,34 @@
+.emailRow {
+  display: flex;
+  align-items: center;
+}
+
+.emailRow_options {
+  display: flex;
+  flex: 0.1;
+}
+
+.emailRow__title {
+  flex: 0.15;
+  font-size: 14px;
+}
+
+.emailRow__message {
+  display: flex;
+  flex: 0.65;
+  font-size: 14px;
+}
+
+.emailRow__message > h4 {
+    margin-right: 5px;
+}
+
+.emailRow__description {
+  color: gray;
+  margin-left: 5px;
+}
+
+.emailRow__time {
+  flex: 0.1;
+  font-size: 10px;
+}
