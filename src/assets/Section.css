@@ -1,0 +1,33 @@
+.section {
+  justify-self: stretch;
+  min-width: 40%;
+  flex-shrink: 0;
+}
+
+.section__body > h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 18px;
+}
+
+.section--active {
+  color: #1565c0;
+  background-color: whitesmoke;
+}
+
+.section__body {
+  display: flex;
+  padding: 10px;
+  padding-right: 20px;
+  padding-bottom: 8px;
+  align-items: center;
+}
+
+.section__border {
+  display: block;
+  position: relative;
+  left: 10%;
+  width: 80% !important;
+  width: auto;
+  border-bottom: 3px solid #1565c0;
+}

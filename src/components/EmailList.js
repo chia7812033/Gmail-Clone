@@ -3,12 +3,16 @@ import "../assets/EmailList.css";
 import { Checkbox, IconButton } from "@mui/material";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import InboxIcon from "@mui/icons-material/Inbox";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import React from "react";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import Section from "./Section";
 
 function EmailList() {
   const squreButtonStyle = {
@@ -23,7 +27,7 @@ function EmailList() {
       <div className='emailList__settings'>
         <div className='emailList__settingsLeft'>
           <div className='emailList__settingsSet'>
-            <Checkbox  sx={squreButtonStyle} />
+            <Checkbox sx={squreButtonStyle} />
             <IconButton iconSize={1.0} sx={squreButtonStyle}>
               <ArrowDropDownIcon />
             </IconButton>
@@ -53,8 +57,10 @@ function EmailList() {
         </div>
       </div>
 
-      <div className="emailList__section">
-        
+      <div className='emailList__sections'>
+        <Section Icon={InboxIcon} title='Inbox'selected={true} />
+        <Section Icon={LocalOfferIcon} title='Promotions'/>
+        <Section Icon={PeopleAltIcon} title='Social'/>
       </div>
     </div>
   );

@@ -1,10 +1,19 @@
 .emailList {
-  flex: 0.8;
+  flex: 1;
+  overflow-y: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .emailList__settings {
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  height: fit-content;
 }
 
 .emailList__settingsLeft {
@@ -18,5 +27,9 @@
 .emailList__settingsSet {
   margin-left: 20px;
   margin-right: 20px;
+  display: flex;
+}
+
+.emailList__sections {
   display: flex;
 }
