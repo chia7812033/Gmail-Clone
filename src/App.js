@@ -8,13 +8,16 @@ import Mail from "./components/Mail";
 import React from "react";
 import SendMail from "./components/SendMail";
 import Sidebar from "./components/Sidebar";
+import { selectSendMessageIsOpen } from "./features/mailSlice";
+import { useSelector } from "react-redux";
 
 function App() {
+  const SendMessageIsOpen = useSelector(selectSendMessageIsOpen);
+
   return (
     <HashRouter>
       <div className='app'>
         <Header />
-
         <div className='app__body'>
           <Sidebar />
 
@@ -24,8 +27,7 @@ function App() {
           </Routes>
         </div>
 
-        <SendMail />
-
+        {SendMessageIsOpen && <SendMail />}
       </div>
     </HashRouter>
   );

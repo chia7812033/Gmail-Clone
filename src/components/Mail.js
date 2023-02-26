@@ -23,10 +23,13 @@ import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import TurnLeftRoundedIcon from "@mui/icons-material/TurnLeftRounded";
 import TurnRightRoundedIcon from "@mui/icons-material/TurnRightRounded";
+import { selecteOpenMail } from "../features/mailSlice";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function Mail({ id, title }) {
+function Mail() {
   const navigate = useNavigate();
+  const selectedMail = useSelector(selecteOpenMail)
 
   const squreButtonStyle = {
     borderRadius: 1,
@@ -103,7 +106,7 @@ function Mail({ id, title }) {
       <div className='mail__body'>
         <div className='mail__header'>
           <div className='mail__subject'>
-            <h3>This is subject</h3>
+            <h3>{selectedMail?.subject}</h3>
             <IconButton>
               <LabelIcon />
             </IconButton>
@@ -123,8 +126,8 @@ function Mail({ id, title }) {
           <Avatar />
           <div className='mail__senderMain'>
             <div>
-              <h4>This is title</h4>
-              <p>This is time</p>
+              <h4>{selectedMail?.sender}</h4>
+              <p>{selectedMail?.time}</p>
               <div className='mail__senderTools'>
                 <IconButton>
                   <StarBorderIcon />
@@ -145,7 +148,7 @@ function Mail({ id, title }) {
         </div>
 
         <div className='mail__content'>
-          <p>This is description</p>
+          <p>{selectedMail?.description}</p>
         </div>
 
         <div className='mail__buttons'>

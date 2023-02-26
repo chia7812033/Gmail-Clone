@@ -1,12 +1,14 @@
 .app {
   background-color: #ebf5fb;
-  height: 90vh;
+  height: 97.7vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .app__body {
+  flex: 1;
   background-color: #ebf5fb;
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 1fr;
-  height: 90vh;
 }

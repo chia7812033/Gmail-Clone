@@ -15,11 +15,16 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import React from "react";
 import SidebarOption from "./SidebarOption";
 import StarIcon from "@mui/icons-material/Star";
+import { openSendMessage } from "../features/mailSlice";
+import { useDispatch } from "react-redux";
 
 function Sidebar() {
+
+  const dispatch = useDispatch()
+
   return (
     <div className='sidebar'>
-      <Button startIcon={<CreateIcon />} className='sidebar__compose'>
+      <Button startIcon={<CreateIcon />} className='sidebar__compose' onClick={() => dispatch(openSendMessage())}>
         Compose
       </Button>
 

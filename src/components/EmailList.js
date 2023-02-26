@@ -1,6 +1,8 @@
 import "../assets/EmailList.css";
 
 import { Checkbox, IconButton } from "@mui/material";
+import React, { useEffect } from "react";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import EmailRow from "./EmailRow";
@@ -11,9 +13,12 @@ import KeyboardHideIcon from "@mui/icons-material/KeyboardHide";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import React from "react";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import Section from "./Section";
+import { db } from "../db/firebase";
+import {selectSendMessageIsOpen} from '../features/mailSlice'
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 function EmailList() {
 
@@ -24,13 +29,33 @@ function EmailList() {
     paddingRight: 0.2,
   };
 
+  const SendMessageIsOpen = useSelector(selectSendMessageIsOpen);
+
+  const [emails, setEmails] = useState([]);
+
+  useEffect(() => {
+    getAllMail(db);
+  }, [SendMessageIsOpen]);
+
+  const getAllMail = async (db) => {
+    const q = query(collection(db, "emails"), orderBy("timestamp", "desc"));
+
+    const querySnapshot = await getDocs(q);
+    setEmails(
+      querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        data: doc.data(),
+      }))
+    );
+  };
+
   return (
     <div className='emailList'>
       <div className='emailList__settings'>
         <div className='emailList__settingsLeft'>
           <div className='emailList__settingsSet'>
             <Checkbox sx={squreButtonStyle} />
-            <IconButton iconSize={1.0} sx={squreButtonStyle}>
+            <IconButton sx={squreButtonStyle}>
               <ArrowDropDownIcon />
             </IconButton>
           </div>
@@ -66,18 +91,16 @@ function EmailList() {
       </div>
 
       <div className='emailList__list'>
-        <EmailRow
-          sender='Twitch'
-          subject='Hello new follwer!'
-          description='This is a test'
-          time='10pm'
-        />
-        <EmailRow
-          sender='Twitch'
-          subject='Hello new follwer!'
-          description='This is a test This is a test This is a test This is a test'
-          time='10pm'
-        />
+        {emails.map(({ id, data: { to, subject, content, timestamp } }) => (
+          <EmailRow
+            id={id}
+            key={id}
+            sender={to}
+            subject={subject}
+            description={content}
+            time={new Date(timestamp.seconds * 1000).toLocaleString("en-US")}
+          />
+        ))}
       </div>
     </div>
   );
