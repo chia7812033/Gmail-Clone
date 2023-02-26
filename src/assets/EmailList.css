@@ -1,9 +1,15 @@
 .emailList {
-  overflow-y: auto;
   margin: 15px 10px;
   background-color: white;
   border-radius: 10px;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.emailList__body {
+  overflow-y: scroll;
+  flex: 1;
 }
 
 .emailList__settings {
@@ -12,6 +18,8 @@
   position: sticky;
   top: 0;
   height: fit-content;
+  color: white;
+  z-index: 0;
 }
 
 .emailList__settingsLeft {

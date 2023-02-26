@@ -10,5 +10,6 @@
   background-color: #ebf5fb;
   display: grid;
   grid-template-columns: 200px 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100%;
+  height: 89vh;
 }

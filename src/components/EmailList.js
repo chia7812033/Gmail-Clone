@@ -83,24 +83,26 @@ function EmailList() {
           </div>
         </div>
       </div>
+      <div className='emailList__body'>
+        <div className='emailList__sections'>
+          <Section Icon={InboxIcon} title='Primary' selected={true} />
+          <Section Icon={LocalOfferIcon} title='Promotions' />
+          <Section Icon={PeopleAltIcon} title='Social' />
+        </div>
 
-      <div className='emailList__sections'>
-        <Section Icon={InboxIcon} title='Primary' selected={true} />
-        <Section Icon={LocalOfferIcon} title='Promotions' />
-        <Section Icon={PeopleAltIcon} title='Social' />
-      </div>
-
-      <div className='emailList__list'>
-        {emails.map(({ id, data: { to, subject, content, timestamp } }) => (
-          <EmailRow
-            id={id}
-            key={id}
-            sender={to}
-            subject={subject}
-            description={content}
-            time={new Date(timestamp.seconds * 1000).toLocaleString("en-US")}
-          />
-        ))}
+        <div className='emailList__list'>
+          {emails.map(({ id, data: { to, subject, content, timestamp } }) => (
+            <EmailRow
+              id={id}
+              key={id}
+              sender={to}
+              subject={subject}
+              description={content}
+              time={new Date(timestamp.seconds * 1000).toLocaleString("en-US")}
+            />
+          ))}
+          
+        </div>
       </div>
     </div>
   );

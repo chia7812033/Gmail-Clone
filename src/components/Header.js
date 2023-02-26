@@ -1,6 +1,8 @@
 import "../assets/Header.css";
 
 import { Avatar, IconButton } from "@mui/material";
+import { logout, selectUser } from "../features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 import AppsIcon from "@mui/icons-material/Apps";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
@@ -9,8 +11,24 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import SettingsIcon from "@mui/icons-material/Settings";
 import TuneIcon from "@mui/icons-material/Tune";
+import { auth } from "../db/firebase";
+import { signOut } from "firebase/auth";
 
 function Header() {
+  const user = useSelector(selectUser);
+
+  const dispatch = useDispatch();
+  const signOutGoogle = () => {
+    dispatch(logout());
+    signOut(auth)
+      .then(() => {
+        alert("Sign out successfully");
+      })
+      .catch((error) => {
+        alert("Sign out fail");
+      });
+  };
+
   return (
     <div className='header'>
       <div className='header__left'>
@@ -44,7 +62,7 @@ function Header() {
           <IconButton>
             <AppsIcon />
           </IconButton>
-          <Avatar src='https://ih1.redbubble.net/image.766255212.6589/st,small,507x507-pad,600x600,f8f8f8.u3.jpg' />
+          <Avatar src={user.photoUrl} onClick={signOutGoogle} />
         </div>
       </div>
     </div>

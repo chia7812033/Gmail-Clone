@@ -1,6 +1,6 @@
-.siddbar {
-  flex: 0.2;
+.sidebar {
   width: 100%;
+  max-height: 73%;
 }
 
 .sidebar__compose {
@@ -11,7 +11,7 @@
   text-transform: capitalize !important;
   padding: 15px !important;
   border-radius: 15px !important;
-  background-color: #AED6F1 !important;
+  background-color: #aed6f1 !important;
 }
 
 .sidebar__footer {
